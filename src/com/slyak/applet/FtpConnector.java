@@ -15,7 +15,6 @@ import java.nio.MappedByteBuffer;
 import java.nio.channels.FileChannel;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-import java.util.List;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.FilenameUtils;
@@ -25,9 +24,6 @@ import org.apache.commons.net.ftp.FTP;
 import org.apache.commons.net.ftp.FTPClient;
 import org.apache.commons.net.ftp.FTPFile;
 import org.apache.commons.net.ftp.FTPReply;
-
-import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.TypeReference;
 
 /**
  * The Class FtpConnector.
@@ -261,12 +257,4 @@ public class FtpConnector {
 		}
 		return StringUtils.EMPTY;
     }
-    
-	public static void main(String[] args) {
-		String aString = "[{'diskPath':'D:\\\\Site\\\\contents\\\\ftp.contents.demo.jiaoyu365.net'}]";
-
-		List<FtpConfig> ftpConfigs = JSON.parseObject(aString,
-				new TypeReference<List<FtpConfig>>() {
-				});
-	}
 }
